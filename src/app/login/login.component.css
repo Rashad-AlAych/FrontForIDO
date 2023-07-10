@@ -1,0 +1,71 @@
+.login-container {
+  max-width: 400px; /* Sets the maximum width of the container to 400 pixels */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding: 20px; /* Adds 20 pixels of padding inside the container */
+  background-color: #f8f8f8; /* Sets the background color of the container to a light gray */
+  border-radius: 5px; /* Adds rounded corners to the container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a slight shadow to the container */
+}
+
+.login-container h2 {
+  text-align: center; /* Centers the text horizontally */
+  margin-bottom: 20px; /* Adds 20 pixels of margin at the bottom of the heading */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Adds 20 pixels of margin at the bottom of each form group */
+}
+
+label {
+  display: block; /* Makes the label a block-level element, causing it to appear on a new line */
+  margin-bottom: 5px; /* Adds 5 pixels of margin at the bottom of each label */
+  font-weight: bold; /* Makes the label text bold */
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%; /* Sets the width of the input fields to 100% of their container */
+  padding: 10px; /* Adds 10 pixels of padding inside the input fields */
+  border: 1px solid #ccc; /* Adds a 1-pixel border around the input fields */
+  border-radius: 4px; /* Adds rounded corners to the input fields */
+  font-size: 14px; /* Sets the font size of the input fields to 14 pixels */
+}
+
+button {
+  width: 100%; /* Sets the width of the button to 100% of its container */
+  padding: 10px; /* Adds 10 pixels of padding inside the button */
+  background-color: #4CAF50; /* Sets the background color of the button to a shade of green */
+  color: white; /* Sets the text color of the button to white */
+  border: none; /* Removes the border around the button */
+  border-radius: 4px; /* Adds rounded corners to the button */
+  font-size: 16px; /* Sets the font size of the button to 16 pixels */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+}
+
+button:hover {
+  background-color: #45a049; /* Changes the background color of the button to a darker shade of green when hovering */
+}
+
+.error-message {
+  color: red; /* Sets the text color of error messages to red */
+  font-size: 12px; /* Sets the font size of error messages to 12 pixels */
+  margin-top: 5px; /* Adds 5 pixels of margin at the top of error messages */
+}
+
+img {
+  max-width: 100px; /* Adjust the value to the desired width */
+  max-height: 100px; /* Adjust the value to the desired height */
+  margin-bottom: 2px; /* Add margin as needed */
+}
+
+.logo
+{
+  text-align: center;
+}
+
+.app-name{
+  text-align: center;
+  
+}
+
+

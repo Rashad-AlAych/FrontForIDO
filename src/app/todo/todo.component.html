@@ -1,0 +1,70 @@
+<header>
+  <!-- Logo and App Name -->
+  <div class="logo">
+    <img src="assets/photos/todo-list.png" alt="Logo" />
+  </div>
+  <h1 class="app-name">IDO</h1>
+
+  <!-- User Information -->
+  <div class="user-info">
+    <div class="user-details">
+      <div class="user-avatar">
+        <img src="assets/photos/avatar.png" alt="Avatar" />
+      </div>
+      <div class="user-name">{{loggedInUser}}</div>
+    </div>
+  </div>
+
+
+  <!-- Logout button -->
+  <button class="logout" (click)="logout()">Logout</button>
+</header>
+
+<div>
+  <!-- <h1>My To-do List</h1> -->
+
+  <!-- Add new task form -->
+  <form (submit)="addTask()">
+    <input type="text" class="texttask" [(ngModel)]="newTask" name="newTask" [ngModelOptions]="{ standalone: true }" placeholder="Task title" />
+    <button type="submit">Add Task</button>
+  </form>
+
+  <!-- List of tasks -->
+  <ul>
+    <li *ngFor="let task of tasks">
+      <div class="task-card">
+        <div class="task-status">
+          <span [ngSwitch]="task.completed">
+            <span *ngSwitchCase="false" class="status-to-do">To Do</span>
+            <span *ngSwitchCase="true" class="status-doing">Doing</span>
+            <span *ngSwitchDefault class="status-done">Done</span>
+          </span>
+        </div>
+        <div class="task-content">
+          <div contenteditable="true" class="task-title" (input)="updateTask(task, 'title',  $event)" [innerText]="task.title"></div>
+          <div class="task-details">
+            <div contenteditable="true" class="task-category" (input)="updateTask(task, 'category',  $event)" [innerText]="'Category: ' + task.category"></div>
+            <div contenteditable="true" class="task-due-date" (input)="updateTask(task, 'dueDate',  $event)" [innerText]="task.dueDate | date:'mediumDate'"></div>
+            <div class="task-estimate">
+              Estimate: 
+              <div contenteditable="true" (input)="updateTask(task, 'estimateValue',  $event)" [innerText]="task.estimate?.value"></div>
+              <div>{{ task.estimate?.units }}</div>
+            </div>
+            <div class="task-importance">
+              Importance:
+              <select [(ngModel)]="task.importance" name="importance" (change)="updateTask(task, 'importance',  $event)">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="task-actions">
+          <button (click)="deleteTask(task.id)">Delete</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+</div>
